@@ -1,0 +1,38 @@
+<section data-ng-controller="CoursesController" data-ng-init="findOne()">
+    <div class="header" ng-show="authentication.user.usertype=='staff'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses/create">Add Course</a>&nbsp;&nbsp;
+        <a href="/#!/coursebystaff">View Courses</a>
+        <a href="/#!/assigngrades/{{authentication.user.id}}">Assign Grades</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <div class="header" data-ng-show="authentication.user.usertype=='student'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses">View Courses</a>
+        <a href="/#!/courses">Registered Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <h1>Edit Course details</h1>
+    <form data-ng-submit="update()" novalidate style="background-color:yellowgreen;width: 25%;">
+        <table>
+        <tr>
+            <td><label for="name">Course Name :</label></td>
+            <td><div>
+                <input type="text" data-ng-model="course.name" id="name" placeholder="Course Name" required>
+            </div></td>
+        </tr>
+        <tr>
+            <td><label for="details">Details :</label></td>
+            <td><div>
+                <textarea data-ng-model="course.details" id="details" cols="30" rows="4" placeholder="Details"></textarea>
+            </div></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Update"></td>
+        </div>
+        </table>
+    </form>
+        <div data-ng-show="error" class="error">
+            <strong data-ng-bind="error"></strong>
+        </div>
+</section>

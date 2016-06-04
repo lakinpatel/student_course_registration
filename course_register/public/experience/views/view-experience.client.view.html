@@ -1,0 +1,24 @@
+<div class="header">
+    <a href="/">Homepage</a>&nbsp;&nbsp;
+    <a href="/#!/experiences/create">Add Experience</a>&nbsp;&nbsp;
+    <a href="/#!/experiences">View Experiences</a>
+    <a href="/signout">Sign out</a>
+</div>
+<section data-ng-controller="ExperiencesController" data-ng-init="findOne()">
+
+    <font size="5"><a data-ng-href="#!/experiences/{{experience._id}}" data-ng-bind="experience.position" style="text-transform:capitalize"></a></font>
+    <br> Company Name : <span data-ng-bind="experience.companyName" style="text-transform:capitalize"></span></br>
+    
+    Location : <small data-ng-bind="experience.city" style="text-transform:capitalize"></small>,
+    <small data-ng-bind="experience.country" style="text-transform:capitalize"></small></br>
+    
+    From : <span data-ng-bind="experience.startDate | date"></span> to <span data-ng-bind="experience.endDate | date"></span></br>
+    
+    Details : <span data-ng-bind="experience.details"></span>
+    
+    <div data-ng-show="authentication.user._id == experience.creator._id">
+        <a href="/#!/experiences/{{experience._id}}/edit">Edit</a>
+        <a href="#!" data-ng-click="delete();">Delete</a>
+    </div>
+    
+</section>

@@ -1,0 +1,58 @@
+.header{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 10%;
+}
+
+.detail-box{
+    float: right;
+    margin-left: 10px; 
+    background: #fff url('../img/comment_bg.png');
+    display: block;
+    padding: 20px;
+    border: 1px solid #cecece;
+    clear: both;
+    width: 60%;
+}
+
+.labelLeft{
+    float: left;
+}
+
+.error{
+    color:red;
+}
+
+.signs a {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+.signed a {
+    background-color: #f443b2;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+    width: 135px;
+    margin: 5px;
+}
+
+.header a {
+    background-color: #222222;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+    width: 135px;
+    margin: 5px;
+}
+
+.flash{
+    color:red;
+}

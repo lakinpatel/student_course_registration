@@ -1,0 +1,14 @@
+<section data-ng-controller="CoursesController" data-ng-init="findByStaff()" style="width:80%;margin-top:15px;">
+    <div class="header" ng-show="authentication.user.usertype=='staff'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses/create">Add Course</a>&nbsp;&nbsp;
+        <a href="/#!/coursebystaff">View Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <div class="header" data-ng-show="authentication.user.usertype=='student'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses">View Courses</a>
+        <a href="/#!/registeredcourses">Registered Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+</section>

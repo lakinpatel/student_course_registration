@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    Course Name : Emerging Technologies
+    Code : COMP 308
+    Assignment 3 : Resume Builder
+    Created by : Lakinkumar Patel
+    File : Register file of application
+    url : http://localhost:3000/
+-->
+<html>
+
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/signin">Sign In</a>&nbsp;&nbsp;
+    </div>
+    <% for(var i in messages) { %>
+        <div class="flash">
+            <%= messages[i] %>
+        </div>
+        <% } %>
+            <form action="/signup" method="post" style="background-color: darkkhaki;width: 20%;">
+                <table>
+                    <tr>
+                        <td>
+                            <label>I am :</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="usertype" value="staff"/>Staff
+                            <input type="radio" name="usertype" value="student"/>Student
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>First Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="firstName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Last Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="lastName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Email:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Staff #:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="staffNumber" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Phone #:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="phoneNumber" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Address :</label>
+                        </td>
+                        <td>
+                            <input type="text" name="address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>City :</label>
+                        </td>
+                        <td>
+                            <input type="text" name="city" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Country :</label>
+                        </td>
+                        <td>
+                            <input type="text" name="country" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Password:</label>
+                        </td>
+                        <td>
+                            <input type="password" name="password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Sign up" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+</body>
+
+</html>

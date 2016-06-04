@@ -1,0 +1,56 @@
+<section data-ng-controller="CoursesController" data-ng-init="findOne()">
+    <div class="header" ng-show="authentication.user.usertype=='staff'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses/create">Add Course</a>&nbsp;&nbsp;
+        <a href="/#!/coursebystaff">View Courses</a>
+        <a href="/#!/assigngrades">Assign Grades</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <div class="header" data-ng-show="authentication.user.usertype=='student'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses">View Courses</a>
+        <a href="/#!/registeredcourses">Registered Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <div id="view-course-content">
+        <font size="5">
+            <a data-ng-href="#!/courses/{{course._id}}" data-ng-bind="course.position" style="text-transform:capitalize"></a>
+        </font>
+        <br> Course Name : <span data-ng-bind="course.name" style="text-transform:capitalize"></span></br>
+        Course Details : <span data-ng-bind="course.details"></span><br>
+        <div id="enrol-button" data-ng-if="authentication.user.usertype=='student'">
+            <section data-ng-show="course.students.indexOf(authentication.user._id) == -1">
+                <form data-ng-submit="update()">
+                    <input type="submit" value="Enroll Now">
+                </form>
+            </section>
+            <section data-ng-show="course.students.indexOf(authentication.user._id) != -1">
+                <form data-ng-submit="update()">
+                    <label>You are enrolled in this course.</label>
+                    <input type="hidden" name="hdnDelete" value="1">
+                    <input type="submit" value="Drop This Course">
+                </form>
+            </section>
+            <!--a href="/#!/courses/{{course._id}}">Enroll Now</a-->
+
+        </div><br>
+        <div data-ng-show="authentication.user._id == course.creator._id">
+            <span><b>Registered Students</b></span>
+            <ul data-ng-repeat="stud in course.students">
+
+                <form data-ng-submit="createGrade()">
+                    <a href="/#!/staffs/{{stud}}">
+                        <span data-ng-bind="stud"></span>
+                    </a>
+                    <td>
+                        <input type="text" placeholder="Enter Marks Here" data-ng-model="marks" />
+                        <input type="submit" />
+                    </td>
+                </form>
+
+            </ul>
+            <a href="/#!/courses/{{course._id}}/edit">Edit</a>
+            <a href="#!" data-ng-click="delete();">Delete Course</a>
+        </div>
+    </div>
+</section>

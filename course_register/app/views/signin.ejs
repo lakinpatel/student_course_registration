@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+    Course Name : Emerging Technologies
+    Code : COMP 308
+    Assignment 3 : Resume Builder
+    Created by : Lakinkumar Patel
+    File : Login file of application
+    url : http://localhost:3000/
+-->
+<html>
+
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/signup">Sign Up</a>&nbsp;&nbsp;
+    </div>
+    <% for(var i in messages) { %>
+        <div class="flash">
+            <%= messages[i] %>
+        </div>
+        <% } %>
+            <div>
+                <form action="/signin" method="post" style="background-color: turquoise;width: 20%;">
+                    <table>
+                        <tr>
+                            <td><label>Username:</label></td>
+                            <td><input type="text" name="username" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password:</label></td>
+                            <td><input type="password" name="password" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" value="Sign In" /></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+</body>
+
+</html>

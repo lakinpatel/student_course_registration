@@ -1,0 +1,23 @@
+<section data-ng-controller="StaffController" data-ng-init="findOneStaff()">
+    <div class="header" ng-show="authentication.user.usertype=='staff'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses/create">Add Course</a>&nbsp;&nbsp;
+        <a href="/#!/coursebystaff">View Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <div class="header" data-ng-show="authentication.user.usertype=='student'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses">View Courses</a>
+        <a href="/#!/registeredcourses">Registered Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    Full Name : <span data-ng-bind="staff.firstName" style="text-transform:capitalize"></span>
+    &nbsp;<span data-ng-bind="staff.lastName" style="text-transform:capitalize"></span>
+    <br>Email : {{staff.email}}
+    <br>City: <span data-ng-bind="staff.city +', ' +staff.country" style="text-transform:capitalize"></span>
+    
+    <div data-ng-show="authentication.user.usertype=='staff'">
+        
+    </div>
+     
+</section>

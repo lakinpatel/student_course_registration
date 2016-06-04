@@ -1,0 +1,38 @@
+<section data-ng-controller="CoursesController" data-ng-init="findByStudent()" style="width:80%;margin-top:15px;">
+    <div class="header" ng-show="authentication.user.usertype=='staff'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses/create">Add Course</a>&nbsp;&nbsp;
+        <a href="/#!/coursebystaff">View Courses</a>
+        <a href="/#!/assigngrades">Assign Grades</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <div class="header" data-ng-show="authentication.user.usertype=='student'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/courses">View Courses</a>
+        <a href="/#!/registeredcourses">Registered Courses</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <h1>Hello, <span style="text-transform:capitalize;" data-ng-bind="authentication.user.fullName"></span> !</h1>
+    <div data-ng-hide="!courses || courses.length">
+        No Courses has been added, Click here to <a href="/#!/courses">Add one</a>?
+    </div>
+    <div>
+    <table style="width:80%;">
+        <caption data-ng-show="!courses || courses.length"><h3>My Courses :</h3></caption>
+        <tr data-ng-repeat="course in courses">
+            <td class="detail-box">
+                <font><a data-ng-href="#!/courses/{{course._id}}" data-ng-bind="course.name" style="text-transform:capitalize"></a></font><br>
+                Course Name : <span data-ng-bind="course.name" style="text-transform:capitalize"></span></br>
+                Professor Name : {{course.creator.fullName}}<br>
+                Grade achieved : A
+                <!--Location: <small data-ng-bind="experience.city" style="text-transform:capitalize"></small>,
+                <small data-ng-bind="experience.country" style="text-transform:capitalize"></small></br>
+                From : <span data-ng-bind="experience.startDate | date"></span> to <span data-ng-bind="experience.endDate | date"></span></br>
+                Details : <span data-ng-bind="experience.details"></span> -->
+            </td>
+        </tr>
+
+    </table>
+    </div>
+
+</section>

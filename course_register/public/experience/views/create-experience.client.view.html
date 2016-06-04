@@ -1,0 +1,93 @@
+<div class="header">
+    <a href="/">Homepage</a>&nbsp;&nbsp;
+    <a href="/#!/experiences/create">Add Experience</a>&nbsp;&nbsp;
+    <a href="/#!/experiences">View Experiences</a>
+    <a href="/signout">Sign out</a>
+</div>
+<section data-ng-controller="ExperiencesController">
+    <h1>New Experience</h1>
+    <form data-ng-submit="create()" novalidate style="background-color:yellowgreen;width: 30%;">
+        <table>
+            <tr>
+                <td>
+                    <label for="companyName" class="labelLeft">Company Name :</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-ng-model="companyName" id="companyName" placeholder="Company Name" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="city" class="labelLeft">City :</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-ng-model="city" id="city" placeholder="City" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country" class="labelLeft">Country :</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-ng-model="country" id="country" placeholder="Country" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="position" class="labelLeft">Position :</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-ng-model="position" id="position" placeholder="Position" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="startDate" class="labelLeft">Start Date :</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-ng-model="startDate" id="startDate" placeholder="Start Date" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="endDate" class="labelLeft">End Date :</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-ng-model="endDate" id="endDate" placeholder="End Date" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="details" class="labelLeft">Details :</label>
+                </td>
+                <td>
+                    <div>
+                        <textarea data-ng-model="details" id="details" cols="30" rows="10" placeholder="Details"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Add Experience">
+                </td>
+            </tr>
+
+
+        </table>
+    </form>
+    <div data-ng-show="error" class="error">
+        <strong data-ng-bind="error"></strong>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<!--
+    Course Name : Emerging Technologies
+    Code : COMP 308
+    Group Project : Course Registration
+    Created by : Lakinkumar Patel
+    File : Main file of application
+    url : http://localhost:3000/
+-->
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+
+<body>
+    
+
+                <section ng-view></section>
+                <script type="text/javascript">
+                    window.user = <%- user || 'null' %>;
+                </script>
+                
+                <script type="text/javascript" src="/lib/angular/angular.js"></script>
+                <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+                <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+                <script type="text/javascript" src="/example/example.client.module.js"></script>
+                <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+                <script type="text/javascript" src="/example/config/example.client.route.js"></script>
+                
+                <script type="text/javascript" src="/experience/experience.client.module.js"></script>
+                <script type="text/javascript" src="/experience/controllers/experience.client.controller.js"></script>
+                <script type="text/javascript" src="/experience/services/experience.client.service.js"></script>
+                <script type="text/javascript" src="/experience/config/experiences.client.routes.js"></script>
+                
+                <script type="text/javascript" src="/course/course.client.module.js"></script>
+                <script type="text/javascript" src="/course/controllers/courses.client.controller.js"></script>
+                <script type="text/javascript" src="/course/services/course.client.service.js"></script>
+                <script type="text/javascript" src="/course/config/courses.client.routes.js"></script>
+                
+                <script type="text/javascript" src="/students/student.client.module.js"></script>
+                <script type="text/javascript" src="/students/services/authentication.client.service.js"></script>
+                
+                <script type="text/javascript" src="/staffs/staff.client.module.js"></script>
+                <script type="text/javascript" src="/staffs/controllers/staff.client.controller.js"></script>
+                <script type="text/javascript" src="/staffs/services/authentication.client.service.js"></script>
+                <script type="text/javascript" src="/staffs/services/staff.client.service.js"></script>
+                <script type="text/javascript" src="/staffs/config/staffs.client.routes.js"></script>
+                
+                <script type="text/javascript" src="/grade/grade.client.module.js"></script>
+                <script type="text/javascript" src="/grade/controllers/grade.client.controller.js"></script>
+                <script type="text/javascript" src="/grade/services/grade.client.service.js"></script>
+                <script type="text/javascript" src="/grade/config/grade.client.route.js"></script>
+                
+                <script type="text/javascript" src="/application.js"></script>
+
+</body>
+
+</html>

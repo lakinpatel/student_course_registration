@@ -1,0 +1,40 @@
+<section data-ng-controller="CoursesController" data-ng-init="findByStaff()" style="width:80%;margin-top:15px;">
+    <div class="header" ng-show="authentication.user.usertype=='staff'">
+        <a href="/">Homepage</a>&nbsp;&nbsp;
+        <a href="/#!/coursebystaff">View Courses</a>
+        <a href="/#!/assigngrades">Assign Grades</a>
+        <a href="/signout">Sign out</a>
+    </div>
+    <span>Create Grade Page</span>
+    <h1>Hello, <span style="text-transform:capitalize;" data-ng-bind="authentication.user.fullName"></span> !</h1>
+    <div data-ng-hide="!courses || courses.length">
+        No Courses has been added, Click here to <a href="/#!/courses/create">Add one</a>?
+    </div>
+    <div>
+        <caption data-ng-show="!courses || courses.length">
+            <h3>My Courses :</h3></caption>
+        <select name="courses" ng-model="course" data-ng-change="findStudentsByCourse(course)" data-ng-options="course as course.name for course in courses">
+        </select>
+        <div data-ng-hide="onecourse.students || onecourse.students.length">
+            No Students has registered this course.
+        </div>
+        <section data-ng-controller="GradeController">
+        <div id="course-students" data-ng-show="onecourse.students || onecourse.students.length">
+            <!--section data-ng-controller="GradeController"-->
+                <table data-ng-init="findStudentsByCourse(onecourse)">
+                    <tr data-ng-repeat="student in onecourse.students">
+                        <form data-ng-submit="create()">
+                            <td>{{student}}</td>
+                            <td>
+                                <input type="text" placeholder="Enter Marks Here" name="marks" />
+                                <!--a href="/#!/assigngrades/{{onecourse._id}}/"--><input type="submit" value="Add Marks"/>
+                            </td>
+                        </form>
+                    </tr>
+                </table>
+            <!--/section-->
+        </div>
+        </section>
+    </div>
+
+</section>
